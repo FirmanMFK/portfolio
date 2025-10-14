@@ -1,7 +1,8 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 import project1 from "@/assets/project1.jpg";
 import project2 from "@/assets/project2.jpg";
 import project3 from "@/assets/project3.jpg";
@@ -9,12 +10,13 @@ import project3 from "@/assets/project3.jpg";
 const Projects = () => {
   const projects = [
     {
-      title: "Task Management App",
-      description: "A modern task management application with real-time sync, built using Jetpack Compose and Firebase",
+      title: "MyTelkomsel Android App",
+      description: "Official Telkomsel mobile app with digital wallet integration, package management, and payment services",
       image: project1,
-      tags: ["Kotlin", "Jetpack Compose", "Firebase", "MVVM"],
+      tags: ["Kotlin", "XML", "MVVM", "Retrofit"],
       github: "#",
-      demo: "#"
+      demo: "#",
+      detailLink: "/projects/mytelkomsel"
     },
     {
       title: "Fitness Tracker",
@@ -75,18 +77,29 @@ const Projects = () => {
               </CardContent>
               
               <CardFooter className="gap-2">
-                <Button variant="outline" size="sm" className="flex-1" asChild>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </a>
-                </Button>
-                <Button size="sm" className="flex-1" asChild>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Demo
-                  </a>
-                </Button>
+                {project.detailLink ? (
+                  <Button size="sm" className="flex-1" asChild>
+                    <Link to={project.detailLink}>
+                      <Eye className="w-4 h-4 mr-2" />
+                      View Details
+                    </Link>
+                  </Button>
+                ) : (
+                  <>
+                    <Button variant="outline" size="sm" className="flex-1" asChild>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </a>
+                    </Button>
+                    <Button size="sm" className="flex-1" asChild>
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Demo
+                      </a>
+                    </Button>
+                  </>
+                )}
               </CardFooter>
             </Card>
           ))}
