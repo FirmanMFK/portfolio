@@ -11,28 +11,30 @@ const Projects = () => {
   const projects = [
     {
       title: "MyTelkomsel Android App",
-      description: "Official Telkomsel mobile app with digital wallet integration, package management, and payment services",
+      description: "Developing and Maintenance Telkomsel Android App in domain transaction, digital wallet integration, payment native and universal payment page services",
       image: project1,
-      tags: ["Kotlin", "XML", "MVVM", "Retrofit"],
+      tags: ["Kotlin", "Java", "XML", "MVVM", "Retrofit", "GSON", "Clean Architecture", "Room", "Shared Preferences", "Google Analytics", "Firebase Crashlytics", "JUnit", "Mockito"],
       github: "#",
-      demo: "#",
+      demo: "https://play.google.com/store/apps/details?id=com.telkomsel.telkomselcm&hl=id&pli=1",
       detailLink: "/projects/mytelkomsel"
     },
     {
-      title: "Fitness Tracker",
-      description: "Comprehensive fitness tracking app with workout plans, progress charts, and health metrics",
+      title: "Digital Alumni Book Android App",
+      description: "Helping user to find alumni from their school or community and help them to connect with each other",
       image: project2,
-      tags: ["Kotlin", "Room", "Coroutines", "Material Design"],
+      tags: ["Kotlin", "MVP", "Coroutines", "Material Design", "XML", "SQLite", "Shared Preferences", "Firebase Crashlytics"],
       github: "#",
-      demo: "#"
+      demo: "",
+      detailLink: "/projects/digital-alumni-book"
     },
     {
-      title: "E-Commerce Platform",
-      description: "Full-featured shopping app with payment integration, cart management, and user profiles",
+      title: "Bukku E-Commerce App",
+      description: "Full-featured finding books, publisher or writer and buying books app with payment integration, cart management, and user profiles",
       image: project3,
-      tags: ["Kotlin", "Retrofit", "Clean Architecture", "Stripe"],
+      tags: ["Kotlin", "MVP", "Retrofit", "GSON", "Firebase Crashlytics"],
       github: "#",
-      demo: "#"
+      demo: "#",
+      detailLink: "/projects/bukku-e-commerce"
     }
   ];
 
@@ -77,28 +79,29 @@ const Projects = () => {
               </CardContent>
               
               <CardFooter className="gap-2">
-                {project.detailLink ? (
-                  <Button size="sm" className="flex-1" asChild>
+                {project.detailLink && (
+                  <Button size="sm" className="flex-1" asChild variant="outline">
                     <Link to={project.detailLink}>
                       <Eye className="w-4 h-4 mr-2" />
                       View Details
                     </Link>
                   </Button>
-                ) : (
-                  <>
-                    <Button variant="outline" size="sm" className="flex-1" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button size="sm" className="flex-1" asChild>
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
-                      </a>
-                    </Button>
-                  </>
+                )}
+                {project.github && !project.detailLink && (
+                  <Button variant="outline" size="sm" className="flex-1" asChild>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
+                  </Button>
+                )}
+                {project.demo && (
+                  <Button size="sm" className="flex-1" asChild>
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Demo
+                    </a>
+                  </Button>
                 )}
               </CardFooter>
             </Card>

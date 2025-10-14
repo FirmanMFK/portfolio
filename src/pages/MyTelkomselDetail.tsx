@@ -22,8 +22,10 @@ const MyTelkomselDetail = () => {
           
           <div className="flex flex-wrap gap-2 mb-8">
             <Badge variant="secondary">Kotlin</Badge>
+            <Badge variant="secondary">Java</Badge>
             <Badge variant="secondary">XML</Badge>
             <Badge variant="secondary">MVVM</Badge>
+            <Badge variant="secondary">Dependency Injection</Badge>
             <Badge variant="secondary">Retrofit</Badge>
             <Badge variant="secondary">Material Design</Badge>
           </div>
@@ -81,21 +83,6 @@ const MyTelkomselDetail = () => {
               />
               <p className="text-sm text-muted-foreground text-center">Payment Methods</p>
             </div>
-          </div>
-
-          <div className="flex gap-4">
-            <Button variant="outline" size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4 mr-2" />
-                View Code
-              </a>
-            </Button>
-            <Button size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Live Demo
-              </a>
-            </Button>
           </div>
         </div>
       </div>

@@ -5,19 +5,19 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Languages",
-      skills: ["Kotlin", "Java", "XML", "SQL"]
+      skills: ["Kotlin", "Java", "HTML", "Javascript", "Dart","PHP", "SQL"]
     },
     {
       title: "Frameworks & Libraries",
-      skills: ["XML", "Material Design", "Retrofit", "Room", "Coroutines", "Flow"]
+      skills: ["XML", "Material Design", "Retrofit", "Room", "SQLite", "Shared Preferences" ,"Coroutines", "Koin"]
     },
     {
       title: "Tools & Platforms",
-      skills: ["Android Studio", "Git", "Firebase", "REST APIs", "MVVM", "Clean Architecture"]
+      skills: ["Android Studio", "Git", "Firebase", "REST APIs", "MVVM", "MVP", "Clean Architecture"]
     },
     {
       title: "Testing",
-      skills: ["JUnit", "Espresso", "Mockito", "UI Testing"]
+      skills: ["JUnit", "Mockito"]
     }
   ];
 

@@ -7,26 +7,20 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "developer@example.com",
-      href: "mailto:developer@example.com"
+      value: "firman.mfk@gmail.com",
+      href: "mailto:firman.mfk@gmail.com"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Connect with me",
-      href: "https://linkedin.com"
+      href: "https://www.linkedin.com/in/muhammad-firman-kahfi-597568117/"
     },
     {
       icon: Github,
       label: "GitHub",
       value: "View my code",
-      href: "https://github.com"
-    },
-    {
-      icon: Twitter,
-      label: "Twitter",
-      value: "Follow me",
-      href: "https://twitter.com"
+      href: "https://github.com/FirmanMFK"
     }
   ];
 
@@ -40,7 +34,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {contactLinks.map((link, index) => (
             <Card 
               key={index}
