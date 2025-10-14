@@ -18,10 +18,10 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Muhammad Firman Kahfi
+            Hello, My Name is Muhammad Firman Kahfi
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Android Developer
+          <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto font-semibold">
+            Android Developer experience with over 5 years
           </p>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Crafting innovative mobile experiences with Kotlin, Jetpack Compose, and modern Android technologies
