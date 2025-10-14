@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import ThemeToggle from "@/components/ThemeToggle.tsx";
 
 const Index = () => {
   const location = useLocation();
@@ -21,6 +22,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <div className="absolute top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
       <Hero />
       <About />
       <Skills />
