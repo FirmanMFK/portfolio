@@ -26,8 +26,7 @@ const About = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Passionate Android developer with expertise in creating high-performance mobile applications
-            that users love. Specialized in modern Android development using Kotlin and Jetpack libraries.
+            Experienced for more than 5 years in Android application development with a focus on modern architecture and complex feature development. Passionate about creating high-performance mobile applications that users love, specializing in Kotlin and Jetpack libraries.
           </p>
         </div>
 
