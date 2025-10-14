@@ -9,7 +9,7 @@ const Skills = () => {
     },
     {
       title: "Frameworks & Libraries",
-      skills: ["Jetpack Compose", "Material Design", "Retrofit", "Room", "Coroutines", "Flow"]
+      skills: ["XML", "Material Design", "Retrofit", "Room", "Coroutines", "Flow"]
     },
     {
       title: "Tools & Platforms",
