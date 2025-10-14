@@ -9,15 +9,22 @@ import alumniListFriend from "@/assets/alumni-list-friend.jpeg";
 const DigitalAlumniDetail = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-20">
-        <Link to="/">
-          <Button variant="ghost" className="mb-8">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Portfolio
-          </Button>
-        </Link>
-
-        <div className="max-w-4xl mx-auto">
+      <div
+        className="relative h-[300px] w-full bg-cover bg-no-repeat bg-center mb-8"
+        style={{ background: `linear-gradient(to right,rgb(9, 171, 225),rgb(123, 195, 250))` }}
+      >
+        <div className="absolute inset-0 bg-black/30 "></div>
+        <div className="relative container mx-auto px-4 py-6 z-10">
+          <Link to="/#projects">
+            <Button variant="ghost" className="mb-8 text-white">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Portfolio
+            </Button>
+          </Link>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 py-6 -mt-[250px] relative z-20">
+        <div className="max-w-4xl mx-auto bg-card p-8 rounded-lg shadow-lg">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Digital Alumni Book</h1>
           
           <div className="flex flex-wrap gap-2 mb-8">

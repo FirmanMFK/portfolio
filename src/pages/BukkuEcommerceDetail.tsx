@@ -2,22 +2,30 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-// import bukkuHome from "@/assets/bukku-home.jpeg"; // Placeholder: User needs to add this image
-// import bukkuSearch from "@/assets/bukku-search.jpeg"; // Placeholder: User needs to add this image
-// import bukkuCart from "@/assets/bukku-cart.jpeg"; // Placeholder: User needs to add this image
+import bukkuDetail from "@/assets/bukku-detail.jpg"; // Placeholder: User needs to add this image
+import bukkuTracking from "@/assets/bukku-tracking.jpg"; // Placeholder: User needs to add this image
+import bukkuTransacion from "@/assets/bukku-transaction.jpg"; // Placeholder: User needs to add this image
+import bukkuBg from "@/assets/bukku-detail.jpg";
 
 const BukkuEcommerceDetail = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-20">
-        <Link to="/">
-          <Button variant="ghost" className="mb-8">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Portfolio
-          </Button>
-        </Link>
-
-        <div className="max-w-4xl mx-auto">
+      <div
+        className="relative h-[300px] w-full bg-cover bg-center mb-8"
+        style={{ background: `linear-gradient(to right, #8A2BE2, #FFFFFF)` }}
+      >
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative container mx-auto px-4 py-6 z-10">
+          <Link to="/#projects">
+            <Button variant="ghost" className="mb-8 text-white">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Portfolio
+            </Button>
+          </Link>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 py-6 -mt-[250px] relative z-20">
+        <div className="max-w-4xl mx-auto bg-card p-8 rounded-lg shadow-lg">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Bukku E-Commerce App</h1>
           
           <div className="flex flex-wrap gap-2 mb-8">
@@ -57,27 +65,27 @@ const BukkuEcommerceDetail = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="space-y-2">
               <img 
-                // src={bukkuHome} 
+                src={bukkuDetail} 
                 alt="Bukku E-Commerce Home Screen" 
                 className="w-full rounded-lg shadow-lg border"
               />
-              <p className="text-sm text-muted-foreground text-center">Home Screen</p>
+              <p className="text-sm text-muted-foreground text-center">Detail Book Screen</p>
             </div>
             <div className="space-y-2">
               <img 
-                // src={bukkuSearch} 
+                src={bukkuTransacion}
                 alt="Bukku E-Commerce Search Screen" 
                 className="w-full rounded-lg shadow-lg border"
               />
-              <p className="text-sm text-muted-foreground text-center">Search Screen</p>
+              <p className="text-sm text-muted-foreground text-center">Transaction Screen</p>
             </div>
             <div className="space-y-2">
               <img 
-                // src={bukkuCart} 
+                src={bukkuTracking} 
                 alt="Bukku E-Commerce Shopping Cart Screen" 
                 className="w-full rounded-lg shadow-lg border"
               />
-              <p className="text-sm text-muted-foreground text-center">Shopping Cart Screen</p>
+              <p className="text-sm text-muted-foreground text-center">Tracking Screen</p>
             </div>
           </div>
         </div>

@@ -5,19 +5,27 @@ import { Link } from "react-router-dom";
 import paymentImg from "@/assets/mytelkomsel-payment.jpg";
 import walletImg from "@/assets/mytelkomsel-wallet.jpg";
 import homeImg from "@/assets/mytelkomsel-home.jpg";
+import mytsel from "@/assets/mytelkomsel-home.jpg";
 
 const MyTelkomselDetail = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-20">
-        <Link to="/">
-          <Button variant="ghost" className="mb-8">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Portfolio
-          </Button>
-        </Link>
-
-        <div className="max-w-4xl mx-auto">
+      <div
+        className="relative h-[300px] w-full bg-cover bg-center mb-8"
+        style={{ background: `linear-gradient(to right, #FF0000, #000000)` }}
+      >
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div className="relative container mx-auto px-4 py-6 z-10">
+          <Link to="/#projects">
+            <Button variant="ghost" className="mb-8 text-white">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Portfolio
+            </Button>
+          </Link>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 py-6 -mt-[250px] relative z-20">
+        <div className="max-w-4xl mx-auto bg-card p-8 rounded-lg shadow-lg">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">MyTelkomsel Android App</h1>
           
           <div className="flex flex-wrap gap-2 mb-8">
@@ -49,7 +57,7 @@ const MyTelkomselDetail = () => {
 
             <h3 className="text-xl font-semibold mb-3">Technical Highlights</h3>
             <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-8">
-              <li>Built with Kotlin and XML for robust Android development</li>
+              <li>Built with Kotlin, Java and XML for robust Android development</li>
               <li>MVVM architecture for clean separation of concerns</li>
               <li>Retrofit for efficient API communication</li>
               <li>Material Design principles for intuitive UI/UX</li>

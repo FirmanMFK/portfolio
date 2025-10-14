@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import MyTelkomselDetail from "./pages/MyTelkomselDetail";
 import DigitalAlumniDetail from "./pages/DigitalAlumniDetail";
 import BukkuEcommerceDetail from "./pages/BukkuEcommerceDetail";
+import ScrollToTopButton from "./components/ScrollToTopButton.tsx";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
         <Route path="/projects/bukku-e-commerce" element={<BukkuEcommerceDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ScrollToTopButton />
     </TooltipProvider>
   </QueryClientProvider>
 );

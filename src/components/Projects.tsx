@@ -3,9 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
-import project1 from "@/assets/project1.jpg";
-import project2 from "@/assets/project2.jpg";
-import project3 from "@/assets/project3.jpg";
+import project1 from "@/assets/mytsel.png";
+import project2 from "@/assets/Dacbook.png";
+import project3 from "@/assets/bukku.png";
 
 const Projects = () => {
   const projects = [
@@ -33,7 +33,7 @@ const Projects = () => {
       image: project3,
       tags: ["Kotlin", "MVP", "Retrofit", "GSON", "Firebase Crashlytics"],
       github: "#",
-      demo: "#",
+      demo: "",
       detailLink: "/projects/bukku-e-commerce"
     }
   ];
@@ -81,7 +81,10 @@ const Projects = () => {
               <CardFooter className="gap-2">
                 {project.detailLink && (
                   <Button size="sm" className="flex-1" asChild variant="outline">
-                    <Link to={project.detailLink}>
+                    <Link
+                      to={project.detailLink}
+                      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    >
                       <Eye className="w-4 h-4 mr-2" />
                       View Details
                     </Link>
