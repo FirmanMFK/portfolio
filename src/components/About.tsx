@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: Smartphone,
       title: "Modern UI",
-      description: "Building beautiful interfaces with XML and Material Design"
+      description: "Building beautiful interfaces with Jetpack Compose, XML and Material Design"
     },
     {
       icon: Zap,
@@ -26,7 +26,7 @@ const About = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Experienced for more than 5 years in Android application development with a focus on modern architecture and complex feature development. Passionate about creating high-performance mobile applications that users love, specializing in Kotlin Java, XML and modern Android technologies.
+            Experienced for more than 5 years in Android application development with a focus on modern architecture and complex feature development. Passionate about creating high-performance mobile applications that users love, specializing in Kotlin Java, Jetpack Compose, XML and modern Android technologies.
           </p>
         </div>
 

@@ -29,7 +29,7 @@ const Hero = () => {
             Android Developer with more than 5 years of experience
           </p>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Crafting innovative mobile experiences with Kotlin, Java, XML and modern Android technologies
+            Crafting innovative mobile experiences with Kotlin, Java, Jetpack Compose, XML and modern Android technologies
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Button 
