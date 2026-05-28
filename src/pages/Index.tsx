@@ -4,9 +4,10 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import NavigationRail from "@/components/NavigationRail";
+import TopAppBar from "@/components/TopAppBar";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import ThemeToggle from "@/components/ThemeToggle.tsx";
 
 const Index = () => {
   const location = useLocation();
@@ -21,17 +22,18 @@ const Index = () => {
   }, [location]);
 
   return (
-    <div className="min-h-screen">
-      <div className="absolute top-4 right-4 z-50">
-        <ThemeToggle />
+    <>
+      <NavigationRail />
+      <TopAppBar />
+      <div className="min-h-screen app-content">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
       </div>
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    </>
   );
 };
 

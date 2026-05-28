@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowUp } from "lucide-react";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,17 +26,23 @@ const ScrollToTopButton = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <>
       {isVisible && (
-        <Button
+        <button
           onClick={scrollToTop}
-          className="rounded-full w-12 h-12 shadow-lg"
-          size="icon"
+          className="m3-fab fixed z-50 animate-fab-enter"
+          style={{
+            bottom: "96px",
+            right: "16px",
+          }}
+          aria-label="Scroll to top"
         >
-          <ArrowUp className="w-5 h-5" />
-        </Button>
+          <span className="material-symbols-outlined text-2xl">
+            arrow_upward
+          </span>
+        </button>
       )}
-    </div>
+    </>
   );
 };
 

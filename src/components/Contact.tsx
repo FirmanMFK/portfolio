@@ -1,23 +1,41 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import React, { useEffect, useRef } from "react";
 
 const Contact = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll(".animate-on-scroll");
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const contactLinks = [
     {
-      icon: Mail,
+      icon: "mail",
       label: "Email",
       value: "firman.mfk@gmail.com",
       href: "mailto:firman.mfk@gmail.com"
     },
     {
-      icon: Linkedin,
+      icon: "link",
       label: "LinkedIn",
       value: "Connect with me",
       href: "https://www.linkedin.com/in/muhammad-firman-kahfi-597568117/"
     },
     {
-      icon: Github,
+      icon: "code",
       label: "GitHub",
       value: "View my code",
       href: "https://github.com/FirmanMFK"
@@ -25,46 +43,73 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+    <section id="contact" className="m3-section" ref={sectionRef}>
+      <div className="m3-content">
+        <div className="m3-section-title animate-on-scroll mb-16 flex flex-col items-center text-center">
+          <h2
+            className="m3-display-medium font-bold mb-4"
+            style={{ color: "hsl(var(--foreground))" }}
+          >
+            Get In Touch
+          </h2>
+          <p
+            className="m3-body-large max-w-2xl mx-auto text-center"
+            style={{ color: "hsl(var(--md-on-surface-variant))" }}
+          >
             Let's collaborate on your next Android project. I'm always open to discussing new opportunities.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {contactLinks.map((link, index) => (
-            <Card 
+            <a
               key={index}
-              className="hover:border-primary transition-all duration-300 hover:shadow-lg group"
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m3-card-outlined p-6 group hover:-translate-y-1 transition-all duration-300 animate-on-scroll no-underline"
+              style={{ transitionDelay: `${index * 100}ms`, textDecoration: "none" }}
             >
-              <CardHeader className="text-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                  <link.icon className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <CardTitle className="text-lg">{link.label}</CardTitle>
-                <CardDescription>{link.value}</CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  asChild
-                  className="w-full"
+              <div className="flex flex-col items-center text-center gap-3">
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                  style={{ background: "hsl(var(--md-tertiary-container))" }}
                 >
-                  <a href={link.href} target="_blank" rel="noopener noreferrer">
-                    Connect
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+                  <span
+                    className="material-symbols-outlined text-2xl"
+                    style={{
+                      color: "hsl(var(--md-on-tertiary-container))",
+                      fontVariationSettings: "'FILL' 1",
+                    }}
+                  >
+                    {link.icon}
+                  </span>
+                </div>
+                <h3
+                  className="m3-title-medium"
+                  style={{ color: "hsl(var(--foreground))" }}
+                >
+                  {link.label}
+                </h3>
+                <p
+                  className="m3-body-medium"
+                  style={{ color: "hsl(var(--md-on-surface-variant))" }}
+                >
+                  {link.value}
+                </p>
+                <span className="m3-tonal-button mt-1">
+                  Connect
+                </span>
+              </div>
+            </a>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground">
+        <div className="text-center mt-12 animate-on-scroll">
+          <p
+            className="m3-body-large"
+            style={{ color: "hsl(var(--muted-foreground))" }}
+          >
             Available for freelance projects and full-time opportunities
           </p>
         </div>

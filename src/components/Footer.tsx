@@ -1,10 +1,26 @@
 const Footer = () => {
   return (
-    <footer className="py-8 bg-secondary/50 border-t">
-      <div className="container mx-auto px-4">
-        <div className="text-center text-muted-foreground">
-          <p className="mb-2">© {new Date().getFullYear()} Muhammad Firman Kahfi. Built with React & Tailwind CSS</p>
-          <p className="text-sm">Crafted with passion for mobile development</p>
+    <footer
+      className="py-8 border-t"
+      style={{
+        background: "hsl(var(--md-surface-container))",
+        borderColor: "hsl(var(--md-outline-variant))",
+      }}
+    >
+      <div className="m3-content">
+        <div className="text-center">
+          <p
+            className="m3-body-medium mb-1"
+            style={{ color: "hsl(var(--md-on-surface-variant))" }}
+          >
+            © {new Date().getFullYear()} Muhammad Firman Kahfi. Built with React & Tailwind CSS
+          </p>
+          <p
+            className="m3-label-medium"
+            style={{ color: "hsl(var(--md-outline))" }}
+          >
+            Crafted with passion for mobile development
+          </p>
         </div>
       </div>
     </footer>

@@ -1,42 +1,89 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ═════════════════════════════════════════════════
+   App-level Layout — Material Design 3 Web
+   
+   M3 Web Layout specs:
+   - Compact  (<600px):  16px margins, 64px top bar, 80px bottom nav
+   - Medium   (600-904px): 24px margins  
+   - Expanded (905-1239px): 24px margins, 80px nav rail
+   - Large    (≥1240px): 24px margins, max-width 1040px body
+   ═════════════════════════════════════════════════ */
+
+/* ── Base ── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.25);
+  color: hsl(var(--foreground));
+}
+
+/* ── App Content offset ── */
+
+/* Desktop: leave room for Nav Rail on the left */
+@media (min-width: 768px) {
+  .app-content {
+    margin-left: 80px;
+  }
+}
+
+/* Mobile: leave room for Top App Bar + Bottom Nav */
+@media (max-width: 767px) {
+  .app-content {
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+}
+
+/* ── M3 Section ── */
+.m3-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  scroll-margin-top: 72px; /* Offset for Mobile Top App Bar */
+}
+@media (min-width: 768px) {
+  .m3-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    scroll-margin-top: 0; /* Desktop has a side rail, no top bar */
+  }
+}
+
+/* ── M3 Container (horizontal margins) ── */
+.m3-content {
+  width: 100%;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width: 600px) {
+  .m3-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* ── M3 Section Title Block ── */
+.m3-section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  margin-bottom: 32px;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 768px) {
+  .m3-section-title {
+    margin-bottom: 48px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* ── M3 Divider ── */
+.m3-divider {
+  height: 1px;
+  background: hsl(var(--md-outline-variant));
 }

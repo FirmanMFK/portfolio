@@ -1,56 +1,102 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import React, { useEffect, useRef } from "react";
 
 const Skills = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll(".animate-on-scroll");
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const skillCategories = [
     {
-      title: "Languages",
-      skills: ["Kotlin", "Java", "HTML", "Javascript", "Dart","PHP", "SQL"]
+      title: "Programming Languages",
+      icon: "code",
+      skills: ["Kotlin", "Java", "Dart", "JavaScript", "PHP", "SQL", "HTML/CSS"]
     },
     {
-      title: "Frameworks & Libraries",
-      skills: ["XML", "Jetpack Compose", "Material Design", "Retrofit", "Room", "SQLite", "Shared Preferences" ,"Coroutines", "Koin"]
+      title: "Mobile Frameworks",
+      icon: "smartphone",
+      skills: ["Android SDK", "Flutter", "Jetpack Compose", "Coroutines", "Retrofit", "Room", "Koin"]
     },
     {
-      title: "Tools & Platforms",
-      skills: ["Android Studio", "Git", "Firebase", "REST APIs", "MVVM", "MVP", "Clean Architecture"]
+      title: "Architecture & Data",
+      icon: "architecture",
+      skills: ["Clean Architecture", "MVVM", "Provider", "REST APIs", "SQLite (DAO)", "Shared Preferences"]
     },
     {
-      title: "Testing",
-      skills: ["JUnit", "Mockito"]
+      title: "Tools & Testing",
+      icon: "construction",
+      skills: ["Android Studio", "VS Code", "Git", "Firebase", "JUnit", "Mockito", "MockK", "Kover"]
     }
   ];
 
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Skills & Technologies</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+    <section id="skills" className="m3-section" ref={sectionRef}>
+      <div className="m3-content">
+        <div className="m3-section-title animate-on-scroll mb-16 flex flex-col items-center text-center">
+          <h2
+            className="m3-display-medium font-bold mb-4"
+            style={{ color: "hsl(var(--foreground))" }}
+          >
+            Skills & Technologies
+          </h2>
+          <p
+            className="m3-body-large max-w-2xl mx-auto text-center"
+            style={{ color: "hsl(var(--md-on-surface-variant))" }}
+          >
             Comprehensive expertise across the Android development ecosystem
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-xl">{category.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <Badge 
-                      key={skillIndex}
-                      variant="secondary"
-                      className="px-3 py-1 text-sm hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div
+              key={index}
+              className="m3-card-filled p-6 animate-on-scroll"
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <span
+                  className="material-symbols-outlined text-xl"
+                  style={{
+                    color: "hsl(var(--primary))",
+                    fontVariationSettings: "'FILL' 1",
+                  }}
+                >
+                  {category.icon}
+                </span>
+                <h3
+                  className="m3-title-large"
+                  style={{ color: "hsl(var(--foreground))" }}
+                >
+                  {category.title}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill, skillIndex) => (
+                  <span
+                    key={skillIndex}
+                    className="m3-chip cursor-default hover:scale-105 transition-transform"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
