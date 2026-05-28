@@ -76,7 +76,7 @@ const Projects = () => {
       image: jejakOto,
       tags: ["React", "JavaScript", "Tailwind CSS", "Zustand", "Firebase", "Leaflet", "Vite", "PWA"],
       github: "#",
-      demo: "https://jejakoto-demo-link.com", // You can leave empty or placeholder
+      demo: "https://jejakoto.web.id",
       detailLink: "/projects/jejakoto",
       useMockup: true
     }

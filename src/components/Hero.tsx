@@ -81,18 +81,6 @@ const Hero = () => {
             </button>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <button
-          onClick={() => scrollToSection("about")}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce m3-icon-button"
-          style={{ color: "hsl(var(--md-on-surface-variant))" }}
-          aria-label="Scroll down"
-        >
-          <span className="material-symbols-outlined text-3xl">
-            expand_more
-          </span>
-        </button>
       </div>
     </section>
   );
