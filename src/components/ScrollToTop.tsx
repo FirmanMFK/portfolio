@@ -5,16 +5,8 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useLayoutEffect(() => {
-    // Temporarily disable smooth scrolling
-    document.documentElement.style.scrollBehavior = 'auto';
-    
-    // Instantly jump to top
+    // Instantly reset scroll before the browser paints — no animation
     window.scrollTo(0, 0);
-    
-    // Restore smooth scrolling for anchor links after a tiny delay
-    setTimeout(() => {
-      document.documentElement.style.scrollBehavior = '';
-    }, 10);
   }, [pathname]);
 
   return null;
