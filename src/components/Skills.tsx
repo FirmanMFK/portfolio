@@ -25,22 +25,32 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: "code",
-      skills: ["Kotlin", "Java", "Dart", "JavaScript", "PHP", "SQL", "HTML/CSS"]
+      skills: ["Kotlin", "Java", "Dart", "JavaScript", "PHP", "SQL"]
     },
     {
-      title: "Mobile Frameworks",
+      title: "Mobile Development",
       icon: "smartphone",
-      skills: ["Android SDK", "Flutter", "Jetpack Compose", "Coroutines", "Retrofit", "Room", "Koin"]
+      skills: ["Android SDK", "Flutter", "Jetpack Compose", "Coroutines"]
     },
     {
-      title: "Architecture & Data",
+      title: "Architecture & State",
       icon: "architecture",
-      skills: ["Clean Architecture", "MVVM", "Provider", "REST APIs", "SQLite (DAO)", "Shared Preferences"]
+      skills: ["Clean Architecture", "MVVM", "BLoC", "Provider"]
+    },
+    {
+      title: "Web & Backend",
+      icon: "cloud",
+      skills: ["HTML/CSS", "React", "Express", "Ktor", "Firebase", "Docker"]
+    },
+    {
+      title: "Data & Networking",
+      icon: "database",
+      skills: ["REST APIs", "Retrofit", "Room", "SQLite", "Koin", "Datastore"]
     },
     {
       title: "Tools & Testing",
       icon: "construction",
-      skills: ["Android Studio", "VS Code", "Git", "Firebase", "JUnit", "Mockito", "MockK", "Kover"]
+      skills: ["Git", "Gradle", "detekt", "JUnit", "MockK", "Kover"]
     }
   ];
 
@@ -58,7 +68,7 @@ const Skills = () => {
             className="m3-body-large max-w-2xl mx-auto text-center"
             style={{ color: "hsl(var(--md-on-surface-variant))" }}
           >
-            Comprehensive expertise across the Android development ecosystem
+            Comprehensive expertise across the Android and multi-platform development ecosystem
           </p>
         </div>
 
