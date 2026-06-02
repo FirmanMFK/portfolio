@@ -101,7 +101,7 @@ const Projects = () => {
             className="m3-body-large max-w-2xl mx-auto text-center"
             style={{ color: "hsl(var(--md-on-surface-variant))" }}
           >
-            Showcasing my best work in Android development
+            Showcasing my best work in Android, Web and Multi-platform development
           </p>
         </div>
 

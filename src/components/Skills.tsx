@@ -68,7 +68,7 @@ const Skills = () => {
             className="m3-body-large max-w-2xl mx-auto text-center"
             style={{ color: "hsl(var(--md-on-surface-variant))" }}
           >
-            Comprehensive expertise across the Android and multi-platform development ecosystem
+            Comprehensive expertise across the Android, Web and Multi-platform development ecosystem
           </p>
         </div>
 

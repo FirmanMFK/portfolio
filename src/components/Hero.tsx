@@ -33,7 +33,6 @@ const Hero = () => {
               <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
                 android
               </span>
-              Android Developer
             </span>
           </div>
 

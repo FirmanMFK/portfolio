@@ -56,7 +56,7 @@ const Contact = () => {
             className="m3-body-large max-w-2xl mx-auto text-center"
             style={{ color: "hsl(var(--md-on-surface-variant))" }}
           >
-            Let's collaborate on your next Android project. I'm always open to discussing new opportunities.
+            Let's collaborate on your next Android, Web and Multi-platform project. I'm always open to discussing new opportunities.
           </p>
         </div>
 
