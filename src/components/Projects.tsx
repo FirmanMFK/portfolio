@@ -31,7 +31,7 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "MyTelkomsel Android App",
+      title: "MyTelkomsel",
       description: "Developing and Maintenance Telkomsel Android App in domain transaction, digital wallet integration, payment native and universal payment page services",
       image: project1,
       tags: ["Kotlin", "Java", "XML", "MVVM", "Retrofit", "GSON", "Clean Architecture", "Room", "Shared Preferences", "Google Analytics", "Firebase Crashlytics", "JUnit", "Mockito"],
@@ -41,7 +41,7 @@ const Projects = () => {
       useMockup: true
     },
     {
-      title: "Digital Alumni Book Android App",
+      title: "Digital Alumni Book",
       description: "Helping user to find alumni from their school or community and help them to connect with each other",
       image: project2,
       tags: ["Kotlin", "MVP", "Coroutines", "Material Design", "XML", "SQLite", "Shared Preferences", "Firebase Crashlytics"],
@@ -51,7 +51,7 @@ const Projects = () => {
       useMockup: true
     },
     {
-      title: "Bukku E-Commerce App",
+      title: "Bukku E-Commerce",
       description: "Full-featured finding books, publisher or writer and buying books app with payment integration, cart management, and user profiles",
       image: project3,
       tags: ["Kotlin", "MVP", "Retrofit", "GSON", "Firebase Crashlytics"],
